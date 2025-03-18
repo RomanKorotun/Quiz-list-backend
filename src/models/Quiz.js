@@ -1,7 +1,6 @@
 import { model, Schema } from "mongoose";
 import Joi from "joi";
 import { handleSaveError, handleUpdateSettings } from "./hooks.js";
-import quizRouter from "../routes/api/quiz-router.js";
 
 const QuizSchema = new Schema(
   {

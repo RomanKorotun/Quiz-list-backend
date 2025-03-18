@@ -2,6 +2,7 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 import quizRouter from "./routes/api/quiz-router.js";
+import takeQuizRouter from "./routes/api/take-quiz-router.js";
 
 const { NODE_ENV } = process.env;
 
@@ -13,6 +14,7 @@ app.use(logger(formatsLogger));
 app.use(express.json());
 
 app.use("/api/quizzes", quizRouter);
+app.use("/api/take-quizzes", takeQuizRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not Found" });
